@@ -1,5 +1,7 @@
 package pl.krakow.uek.pp5.jkan.creditcardapp.model;
 
+import pl.krakow.uek.pp5.jkan.creditcardapp.model.exceptions.CreditBelowMinimumValueException;
+
 import java.math.BigDecimal;
 
 public class CreditCard {
@@ -11,7 +13,10 @@ public class CreditCard {
     }
 
     public void assignLimit(BigDecimal newLimit) {
-        creditLimit = newLimit;
+        if(BigDecimal.valueOf(100).compareTo(newLimit) == 1) {
+            throw new CreditBelowMinimumValueException();
+        }
+        this.creditLimit = newLimit;
     }
 
     public BigDecimal getLimit() {

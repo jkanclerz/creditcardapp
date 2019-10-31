@@ -22,4 +22,12 @@ public class CreditCard {
     public BigDecimal getLimit() {
         return creditLimit;
     }
+
+    public void withdraw(BigDecimal money) {
+
+    }
+
+    public BigDecimal currentBalance() {
+        return null;
+    }
 }

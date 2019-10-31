@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 public class CreditCard {
     private String cardNumber;
     private BigDecimal creditLimit;
+    private BigDecimal cardBalance;
 
     public CreditCard(String cardNumber) {
         this.cardNumber = cardNumber;
@@ -17,6 +18,7 @@ public class CreditCard {
             throw new CreditBelowMinimumValueException();
         }
         this.creditLimit = newLimit;
+        this.cardBalance = creditLimit;
     }
 
     public BigDecimal getLimit() {
@@ -24,10 +26,10 @@ public class CreditCard {
     }
 
     public void withdraw(BigDecimal money) {
-
+        cardBalance = cardBalance.subtract(money);
     }
 
     public BigDecimal currentBalance() {
-        return BigDecimal.valueOf(500);
+        return cardBalance;
     }
 }

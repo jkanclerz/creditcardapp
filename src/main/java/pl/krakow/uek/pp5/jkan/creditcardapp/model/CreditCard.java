@@ -28,6 +28,6 @@ public class CreditCard {
     }
 
     public BigDecimal currentBalance() {
-        return null;
+        return BigDecimal.valueOf(500);
     }
 }

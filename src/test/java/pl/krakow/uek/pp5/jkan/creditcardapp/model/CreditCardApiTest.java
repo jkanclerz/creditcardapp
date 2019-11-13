@@ -24,10 +24,10 @@ public class CreditCardApiTest {
         currentBalanceForCCEquals(CREDIT_CARD_NUMBER, BigDecimal.valueOf(500));
     }
 
-    private void currentBalanceForCCEquals(String creditCardNumber, BigDecimal expectedBallance) {
+    private void currentBalanceForCCEquals(String creditCardNumber, BigDecimal expectedBalance) {
         CreditCard loaded = inMemoryCCStorage.load(creditCardNumber);
 
-        Assert.assertEquals(expectedBallance, loaded.currentBalance());
+        Assert.assertEquals(expectedBalance, loaded.currentBalance());
     }
 
     private void thereIsCCApi() {

@@ -31,7 +31,7 @@ public class CreditCardApiTest {
     }
 
     private void thereIsCCApi() {
-        api = new CreditCardFacade();
+        api = new CreditCardFacade(this.inMemoryCCStorage);
     }
 
     private void thereIsCreditCard() {
